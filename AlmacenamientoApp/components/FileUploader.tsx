@@ -9,10 +9,9 @@ type FileUploaderProps = {
   onPress?: () => void;
 };
 
-/**
- * Componente reutilizable de UI para una opción de carga.
- * Solo presentación: la lógica de carga se conectará más adelante.
- */
+// Componente reutilizable de UI para una opción de carga.
+// Solo presentación: la lógica de carga se conectará más adelante.
+
 export default function FileUploader({
   title,
   description,
