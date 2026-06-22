@@ -14,9 +14,9 @@ import { decode } from 'base64-arraybuffer';
 import { File } from 'expo-file-system';
 
 export const storageConfig = {
-  url: process.env.EXPO_PUBLIC_STORAGE_URL ?? '',
-  apiKey: process.env.EXPO_PUBLIC_STORAGE_KEY ?? '',
-  bucket: process.env.EXPO_PUBLIC_STORAGE_BUCKET ?? '',
+  url: process.env.EXPO_PUBLIC_SUPABASE_URL ?? '',
+  apiKey: process.env.EXPO_PUBLIC_SUPABASE_KEY ?? '',
+  bucket: process.env.EXPO_PUBLIC_SUPABASE_BUCKET ?? '',
 };
 
 // Instancia del cliente de Supabase.
@@ -57,7 +57,7 @@ function buildUniqueName(originalName: string): string {
 export async function uploadToStorage(input: UploadInput): Promise<UploadResult> {
   if (!storageConfig.url || !storageConfig.apiKey || !storageConfig.bucket) {
     throw new Error(
-      'Faltan credenciales de Supabase. Revisa las variables EXPO_PUBLIC_STORAGE_* en tu archivo .env.'
+      'Faltan credenciales de Supabase. Revisa las variables EXPO_PUBLIC_SUPABASE_* en tu archivo .env.'
     );
   }
 
